@@ -1,0 +1,32 @@
+name: Server uname
+slug: server-uname
+type: plugin
+version: 0.1.0
+description: Returns information about the operating system PHP is running on using 'php_uname'
+icon: plug
+author:
+  name: Thomas Schroeder
+  email: Thomas.Schroeder@vrax.de
+homepage: https://github.com/cron-ix/grav-plugin-server-uname
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/cron-ix/grav-plugin-server-uname/issues
+docs: https://github.com/cron-ix/grav-plugin-server-uname/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
