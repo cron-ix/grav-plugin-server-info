@@ -9,7 +9,8 @@ class ServerUnameTwigExtension extends \Twig_Extension
 	public function getFunctions()
 	{
 		return [
-			new \Twig_SimpleFunction('serverUname', [$this, 'serverUnameFunction'])
+			new \Twig_SimpleFunction('serverUname', [$this, 'serverUnameFunction']),
+                        new \Twig_SimpleFunction('serverMachine', [$this, 'serverMachineFunction']),
 		];
 	}
 	public function serverUnameFunction($arg)
@@ -23,5 +24,10 @@ class ServerUnameTwigExtension extends \Twig_Extension
 			return "Fehler: kein Argument oder ungültiges Argument.";
 		}
 	}
+	public function serverMachineFunction()
+        {
+                $command = 'echo "$(cat /sys/devices/virtual/dmi/id/sys_vendor) $(cat /sys/devices/virtual/dmi/id/product_version)"';
+                passthru($command, $output);
+                return $output;
+        }
 }
-
