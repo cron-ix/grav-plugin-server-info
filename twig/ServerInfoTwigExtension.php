@@ -12,6 +12,7 @@ class ServerInfoTwigExtension extends \Twig_Extension
 			new \Twig_SimpleFunction('serverUname', [$this, 'serverUnameFunction']),
                         new \Twig_SimpleFunction('serverMachine', [$this, 'serverMachineFunction']),
 			new \Twig_SimpleFunction('serverCPU', [$this, 'serverCPUFunction']),
+			new \Twig_SimpleFunction('serverMemTotal', [$this, 'serverMemTotalFunction']),
 		];
 	}
 	public function serverUnameFunction($arg)
@@ -34,6 +35,12 @@ class ServerInfoTwigExtension extends \Twig_Extension
 	public function serverCPUFunction()
         {
                 $command = "cat /proc/cpuinfo | grep 'model name' | uniq | awk -F ':' '{print $2}'";
+                passthru($command, $output);
+                return $output;
+        }
+	public function serverMemTotalFunction()
+        {
+                $command = "cat /proc/meminfo | grep MemTotal | awk -F ':' '{print $2}' | xargs";
                 passthru($command, $output);
                 return $output;
         }
