@@ -18,3 +18,4 @@ Returns informations about the server:
 - short code: `{{ serverMachine() }}` to get the machine model
 - short code: `{{ serverCPU() }}`  to get the cpu model name
 - short code: `{{ serverMemTotal() }}` to get the total amount of physical RAM
+- short code: `{{ serverCpuTemp() }}` to get the actuale CPU core temp
