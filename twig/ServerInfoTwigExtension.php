@@ -35,13 +35,13 @@ class ServerInfoTwigExtension extends \Twig_Extension
         }
 	public function serverCPUFunction()
         {
-                $command = "cat /proc/cpuinfo | grep 'model name' | uniq | awk -F ':' '{print $2}'";
+                $command = "cat /proc/cpuinfo | grep 'model name' | uniq | awk -F: '{print $2}' | xargs";
                 passthru($command, $output);
                 return $output;
         }
 	public function serverMemTotalFunction()
         {
-                $command = "cat /proc/meminfo | grep MemTotal | awk -F ':' '{print $2}' | xargs";
+                $command = "cat /proc/meminfo | grep MemTotal | awk -F: '{print $2}' | xargs";
                 passthru($command, $output);
                 return $output;
         }
