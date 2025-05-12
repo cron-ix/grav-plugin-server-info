@@ -1,17 +1,17 @@
-name: Server uname
-slug: server-uname
+name: Server Info
+slug: server-info
 type: plugin
 version: 0.1.0
-description: Returns information about the operating system PHP is running on using 'php_uname'
+description: Returns information about the server
 icon: plug
 author:
   name: Thomas Schroeder
   email: Thomas.Schroeder@vrax.de
-homepage: https://github.com/cron-ix/grav-plugin-server-uname
+homepage: https://github.com/cron-ix/grav-plugin-server-info
 demo: http://demo.yoursite.com
 keywords: grav, plugin, etc
-bugs: https://github.com/cron-ix/grav-plugin-server-uname/issues
-docs: https://github.com/cron-ix/grav-plugin-server-uname/blob/develop/README.md
+bugs: https://github.com/cron-ix/grav-plugin-server-info/issues
+docs: https://github.com/cron-ix/grav-plugin-server-info/blob/develop/README.md
 license: MIT
 
 dependencies:
