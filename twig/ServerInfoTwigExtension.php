@@ -4,7 +4,7 @@ class ServerInfoTwigExtension extends \Twig_Extension
 {
 	public function getName()
 	{
-		return 'ServerUnameTwigExtension';
+		return 'ServerInfoTwigExtension';
 	}
 	public function getFunctions()
 	{
