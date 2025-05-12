@@ -1,6 +1,6 @@
 <?php
 namespace Grav\Plugin;
-class ServerUnameTwigExtension extends \Twig_Extension
+class ServerInfoTwigExtension extends \Twig_Extension
 {
 	public function getName()
 	{
